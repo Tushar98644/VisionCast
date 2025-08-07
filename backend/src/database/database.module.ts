@@ -3,6 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Conversation } from './entities/conversation.entity';
 import { Message } from './entities/message.entity';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConversationController } from './controllers/conversation.controller';
+import { MessageController } from './controllers/message.controller';
+import { ConversationService } from './services/conversation.service';
+import { MessageService } from './services/message.service';
 
 @Module({
   imports: [
@@ -23,6 +27,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       inject: [ConfigService],
     }),
   ],
+  controllers: [ConversationController, MessageController],
+  providers: [ConversationService, MessageService],
   exports: [TypeOrmModule],
 })
 export class DatabaseModule {}
