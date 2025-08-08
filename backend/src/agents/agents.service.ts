@@ -19,9 +19,9 @@ export class AgentsService {
   private initializeAgents() {
     this.scriptAgent = new Agent({
       name: 'VideoScriptAgent',
-      instructions: `You are a professional video script writer. 
-        Generate engaging video scripts with clear scene descriptions, 
-        dialogue, and visual cues. Format the output as JSON with 
+      instructions: `You are a professional video script writer.
+        Generate engaging video scripts with clear scene descriptions,
+        dialogue, and visual cues. Format the output as JSON with
         scenes, descriptions, and timing.`,
       model: 'gpt-4',
     });
